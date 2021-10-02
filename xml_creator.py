@@ -13,7 +13,9 @@ def save_xml(root, filename):
     with open(filename, 'w', encoding="utf-8") as f:
         dom.writexml(f, indent="\t", addindent="\t", newl="\n")
 
-def create_xml(seq_data, clips, file_name):
+def create_xml(seq_data, file_name):
+    clips = seq_data["clips"]
+    
     root = ET.Element("xmeml")
     root.set("version", "4")
     
@@ -256,7 +258,7 @@ if __name__ == "__main__":
         "clips": clips,
     }
     
-    create_xml(seq_data, clips, "test.xml")
+    create_xml(seq_data, "test.xml")
     
 
     

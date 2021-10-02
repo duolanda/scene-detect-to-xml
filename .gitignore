@@ -119,3 +119,4 @@ dmypy.json
 /字幕
 /测试 xml
 *.mp4
+*.xml
