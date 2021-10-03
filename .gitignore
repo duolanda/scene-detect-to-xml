@@ -118,5 +118,10 @@ dmypy.json
 /参考
 /字幕
 /测试 xml
+/out
+/release/workspace
+/release/_internal/ffmpeg
+/release/_internal/python-3.6.8
 *.mp4
 *.xml
+*.bat
