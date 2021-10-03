@@ -12,6 +12,7 @@
 TODO：
 
 - [ ] 非整数倍帧率的特殊情况处理
-- [ ] 更容易的使用方式（bat or GUI）  
+- [x] 更容易的使用方式（bat or GUI）
+- [x] Python 的 Script 文件夹下 exe 都记录了 Python.exe 的绝对路径，而 SceneDetect 有个 CLI 的 exe，需要根据文件夹所在位置动态修改它的路径信息。   
 - [ ] 更丰富的阈值或参数调节
 
