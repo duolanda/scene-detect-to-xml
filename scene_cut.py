@@ -1,5 +1,7 @@
 from scenedetect import VideoManager
 from scenedetect import SceneManager
+from scenedetect.scene_manager import write_scene_list
+
 from scenedetect.detectors import ContentDetector
 
 import os 
@@ -7,9 +9,10 @@ import cv2
 
 from xml_creator import create_xml
 
-def find_scenes(video_path, threshold=30.0):
+def find_scenes(video_path, threshold=30.0, save_csv=False):
     video_manager = VideoManager([video_path])
     scene_manager = SceneManager()
+
     scene_manager.add_detector(
         ContentDetector(threshold=threshold))
 
@@ -17,8 +20,16 @@ def find_scenes(video_path, threshold=30.0):
 
     video_manager.start()
     scene_manager.detect_scenes(frame_source=video_manager)
+    
+    scene_list = scene_manager.get_scene_list()
+    
+    if save_csv:
+        csv_file_path = '%s.csv' % video_path
+        with open(csv_file_path, 'w') as csv_file:
+            write_scene_list(csv_file, scene_list)
 
-    return scene_manager.get_scene_list()
+    return scene_list
+
 
 if __name__ == "__main__":
     video_list = []

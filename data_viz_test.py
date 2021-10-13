@@ -44,7 +44,7 @@ if __name__ == "__main__":
             video_path = os.path.abspath(file)
     
     clips_list = []
-    scenes = find_scenes(video_path)
+    scenes = find_scenes(video_path, save_csv=True)
     for i in range(len(scenes)):
         scene = scenes[i]
         clip = Clip(i, scene[1].frame_num - scene[0].frame_num, [211, 82, 48])
