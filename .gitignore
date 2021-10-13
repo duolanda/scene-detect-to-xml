@@ -125,3 +125,5 @@ dmypy.json
 *.mp4
 *.xml
 *.bat
+*.zip
+*.jpg
